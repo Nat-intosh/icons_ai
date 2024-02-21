@@ -1,0 +1,37 @@
+<%= form_with(model: icon) do |form| %>
+  <% if icon.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(icon.errors.count, "error") %> prohibited this icon from being saved:</h2>
+
+      <ul>
+        <% icon.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.text_area :image %>
+  </div>
+
+  <div>
+    <%= form.label :kind, style: "display: block" %>
+    <%= form.text_field :kind %>
+  </div>
+
+  <div>
+    <%= form.label :tags, style: "display: block" %>
+    <%= form.text_area :tags %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

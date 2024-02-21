@@ -1,0 +1,23 @@
+<div id="<%= dom_id icon %>" class="card col-3">
+  <img class="card-img-top" src="<%= icon.image%>">
+  <div class="card-body">
+      <h5 class="card-title"><%= icon.title %></h5>
+
+    <p>
+      <strong>Image:</strong>
+      <%= icon.image %>
+    </p>
+
+    <p>
+      <strong>Kind:</strong>
+      <%= icon.kind %>
+    </p>
+
+    <p>
+      <strong>Tags:</strong>
+      <%= icon.tags %>
+    </p>
+        <%= link_to "Show this icon", icon, class:"btn btn-primary link-light"%>
+  </div>
+
+</div>

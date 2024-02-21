@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="row">
+<div class="jumbotron col-12">
+  <h1 class="display-4">AI Icons</h1>
+  <p class="lead">Ce site est une librairie gratuite d'icones en 3d générées par Midjourney.</p>
+</div>
+</div>
+<div id="icons" class="row gap-3">
+  <% @icons.each do |icon| %>
+    <%= render icon %>
+  <% end %>
+</div>
+
+<%= link_to "New icon", new_icon_path, class:"btn btn-secondary" %>
