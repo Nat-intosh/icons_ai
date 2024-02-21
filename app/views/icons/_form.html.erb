@@ -10,28 +10,34 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col-5">
+    <form>
+      <div class="form-group">
+        <%= form.label :title, style: "display: block" %>
+        <%= form.text_field :title, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+      <div>
+        <%= form.label :image, style: "display: block" %>
+        <%= form.text_area :image, class:"form-control" %>
+      </div>
+
+      <div>
+        <%= form.label :kind, style: "display: block" %>
+        <%= form.text_field :kind, class:"form-control" %>
+      </div>
+
+      <div>
+        <%= form.label :tags, style: "display: block" %>
+        <%= form.text_area :tags, class:"form-control" %>
+      </div>
+
+      <div>
+        <%= form.submit%>
+      </div>
+    </div>
+    </form>
   </div>
-
-  <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.text_area :image %>
-  </div>
-
-  <div>
-    <%= form.label :kind, style: "display: block" %>
-    <%= form.text_field :kind %>
-  </div>
-
-  <div>
-    <%= form.label :tags, style: "display: block" %>
-    <%= form.text_area :tags %>
-  </div>
-
-  <div>
-    <%= form.submit %>
   </div>
 <% end %>
