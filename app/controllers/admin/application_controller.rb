@@ -10,10 +10,6 @@ module Admin
 
     def authenticate_admin
       # TODO Add authentication logic here.
-      http_basic_authenticate_with(
-        name: ENV.fetch("ADMIN_NAME"),
-        password: ENV.fetch("ADMIN_PASSWORD")
-      )
     end
 
     # Override this value to specify the number of elements to display at a time
