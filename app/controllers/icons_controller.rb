@@ -3,7 +3,9 @@ class IconsController < ApplicationController
 
   # GET /icons or /icons.json
   def index
-    @icons = Icon.all
+    @term = params[:term]
+    @icons = @term.blank? ? Icon.all 
+                          : Icon.where("title LIKE (?)", "%#{@term}%")
   end
 
   # GET /icons/1 or /icons/1.json

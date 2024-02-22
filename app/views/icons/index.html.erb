@@ -17,12 +17,14 @@
   <%# Barre de recherche %>
   <div class="row">
     <div class="col-4">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Rechercher" aria-label="Rechercher" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">Rechercher</button>
+      <form target="" method="">
+        <div class="input-group mb-3">
+          <input name="term" value="<%= @term %>" type="text" class="form-control" placeholder="Rechercher" aria-label="Rechercher" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Rechercher</button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 
