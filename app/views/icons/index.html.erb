@@ -1,17 +1,31 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="row">
-<div class="jumbotron col-12">
-  <h1 class="display-4">AI Icons</h1>
-  <p class="lead">Ce site est une librairie gratuite d'icônes en 3D générées par Midjourney.</p>
-    <% if user_signed_in? %> 
-    <div> Welcome <%= current_user.email %> </div> 
-      <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-    <% else %>
-      <%= button_to "Sign in", new_user_session_path %> 
-    <% end %>
+  <div class="jumbotron col-12">
+    <h1 class="display-4">AI Icons</h1> 
+    <p class="lead">Ce site est une librairie gratuite d'icônes en 3D générées par Midjourney.</p>
+      <% if user_signed_in? %> 
+      <div> Welcome <%= current_user.email %> 
+      </div> 
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+      <% else %>
+        <%= button_to "Sign in", new_user_session_path %> 
+      <% end %>
+  </div>
 </div>
-</div>
+
+  <%# Barre de recherche %>
+  <div class="row">
+    <div class="col-4">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Rechercher" aria-label="Rechercher" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button">Rechercher</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <div id="icons" class="row gap-3">
   <% @icons.each do |icon| %>
     <%= render icon %>
