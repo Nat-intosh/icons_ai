@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :icons
+
+      root to: "icons#index"
+    end
   resources :icons
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
