@@ -7,7 +7,11 @@ class Icon < ApplicationRecord
     end
 
     def toggle_like_for(user)
-        liked_by?(user) ? users.delete(user)
-                        : users << user 
+        if user.nil?
+            return false
+        else
+            liked_by?(user) ? users.delete(user)
+                            : users << user 
+        end
     end
 end

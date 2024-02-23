@@ -1,5 +1,7 @@
 class IconsController < ApplicationController
   before_action :set_icon, only: %i[ show edit update destroy ]
+  
+  before_action :authenticate_user!, only: :like
 
   # GET /icons or /icons.json
   def index
