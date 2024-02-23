@@ -6,14 +6,14 @@
     <h1 class="display-4">AI Icons</h1> 
     <p class="lead">Ce site est une librairie gratuite d'icônes en 3D générées par Midjourney.</p>
       <% if user_signed_in? %> 
-      <div> Welcome <%= current_user.email %> 
-      </div> 
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+      <div> Welcome <%= current_user.email %></div> 
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-primary  " %> 
         <% if current_user.try(:admin?) %>
-          <h2> T'es un admin genre </h2>
+        <a href="/admin/" class="btn btn-primary">Panel admin</a>
         <% end %>
+        <%= link_to "My Profile", user_path %>
       <% else %>
-        <%= button_to "Sign in", new_user_session_path %> 
+        <%= button_to "Sign in", new_user_session_path, class:"btn btn-primary" %> 
       <% end %>
   </div>
 </div>
