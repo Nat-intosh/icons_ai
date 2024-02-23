@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       root to: "icons#index"
     end
   resources :icons
+  resource :user, only: [:show] #test de création de route pour afficher le status de l'utilisateur
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

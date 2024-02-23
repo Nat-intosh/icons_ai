@@ -10,6 +10,7 @@
         <% if current_user.try(:admin?) %>
         <a href="/admin/" class="btn btn-primary">Panel admin</a>
         <% end %>
+        <%= link_to "My Profile", user_path %>
       <% else %>
         <%= button_to "Sign in", new_user_session_path, class:"btn btn-primary" %> 
       <% end %>
