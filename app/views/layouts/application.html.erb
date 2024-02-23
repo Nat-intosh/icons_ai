@@ -15,15 +15,17 @@
 
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid justify-content-start container">
+    
           <% if user_signed_in? %> 
         <%= button_to  "Se déconnecter", destroy_user_session_path, method: :delete, class:"btn btn-outline-success me-2" %> 
         <% if current_user.try(:admin?) %>
-        <a href="/admin/" class="btn btn-sm btn-outline-secondary">Panel admin</a>
+        <a href="/admin/" class="btn btn-outline-secondary m-3">Panel admin</a>
         <% end %>
-        <%= link_to "Mon profil", user_path, class:"btn btn-sm btn-outline-secondary" %>
+        <%= link_to "Mon profil", user_path, class:"btn btn-outline-secondary" %>
       <% else %>
         <%= button_to "Se connecter", new_user_session_path, class:"btn btn-outline-success me-2" %> 
       <% end %>
+    
   </div>
 </nav>
   <div class="container">
