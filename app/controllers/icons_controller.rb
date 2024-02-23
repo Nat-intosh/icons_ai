@@ -59,6 +59,13 @@ class IconsController < ApplicationController
     end
   end
 
+  def like 
+    icon_id = params[:id]
+    icon = Icon.find icon_id
+    icon.toggle_like_for(current_user)
+    redirect_back(fallback_location: root_path)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_icon

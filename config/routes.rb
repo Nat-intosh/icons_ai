@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
       root to: "icons#index"
     end
-  resources :icons
+  resources :icons do
+    member do
+      get :like
+    end
+  end
   resource :user, only: [:show] #test de création de route pour afficher le status de l'utilisateur
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
