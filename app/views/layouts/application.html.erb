@@ -10,6 +10,22 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
+      <%# nav bar %>
+<nav class="navbar bg-body-tertiary">
+  <form class="container-fluid justify-content-start">
+    <button class="btn btn-outline-success me-2" type="button">Se connecter</button>
+    <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
+  </form>
+</nav>
+<%# brouillon nav bar %>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+        <% if current_user.try(:admin?) %>
+          <h2> T'es un admin genre </h2>
+        <% end %>
+      <% else %>
+        <%= button_to "Sign in", new_user_session_path %> 
+
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <div class="container">
