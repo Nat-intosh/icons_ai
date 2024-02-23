@@ -1,2 +1,8 @@
-<h1>Info utilisateur</h1>
+<h1>Mes likes</h1>
 <p><strong>Email:</strong> <%= @user.email %></p>
+
+<div id="icons" class="row gap-3">
+  <% @user.icons.each do |icon| %>
+    <%= render icon %>
+  <% end %>
+</div>
