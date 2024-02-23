@@ -11,7 +11,6 @@
       <strong>Tags:</strong>
       <%= icon.tags %>
     </p>
-    <%= link_to "Voir cette icône", icon, class:"btn btn-primary link-light"%>
     <a href="<%= icon.image%>" download="test">Télécharger cette icone</a>
     <%= link_to like_icon_path(icon.id) do %>
       <% if icon.liked_by?(current_user) %>
