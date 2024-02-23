@@ -10,30 +10,23 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-      <%# nav bar %>
+  <%# nav bar %>
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid justify-content-start">
-    <button class="btn btn-outline-success me-2" type="button">Se connecter</button>
-    <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
           <% if user_signed_in? %> 
-      <div> Welcome <%= current_user.email %></div> 
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-primary  " %> 
+        <%= button_to  "Se déconnecter", destroy_user_session_path, method: :delete, class:"btn btn-outline-success me-2" %> 
         <% if current_user.try(:admin?) %>
-        <a href="/admin/" class="btn btn-primary">Panel admin</a>
+        <a href="/admin/" class="btn btn-sm btn-outline-secondary"">Panel admin</a>
         <% end %>
-        <%= link_to "My Profile", user_path %>
+        <%= link_to "Mon profil", user_path, class:"btn btn-sm btn-outline-secondary" %>
       <% else %>
-        <%= button_to "Sign in", new_user_session_path, class:"btn btn-primary" %> 
+        <%= button_to "Se connecter", new_user_session_path, class:"btn btn-outline-success me-2" %> 
       <% end %>
   </div>
 </nav>
-<%# brouillon nav bar %>
- 
-
-
+  <div class="container">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <div class="container">
     <%= yield %>
   </div>
   </body>
