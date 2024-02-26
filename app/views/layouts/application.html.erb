@@ -14,11 +14,11 @@
   <%# nav bar %>
 
 <nav class="navbar bg-body-tertiary">
-  <div class="container-fluid justify-content-start container">
-        <a href="/" class="btn btn-primary m-3">Ai Icons</a> 
-    
+  <div class="container-fluid container">
+        <a href="/" class="navbar-brand">Ai Icons</a> 
+        <div class="justify-content-end">
           <% if user_signed_in? %> 
-        <%= button_to  "Se déconnecter", destroy_user_session_path, method: :delete, class:"btn btn-outline-success me-2" %> 
+        <%= button_to  "Se déconnecter", destroy_user_session_path, method: :delete, class:"btn btn-outline-success me-2 my-2 my-lg-0 end" %> 
         <% if current_user.try(:admin?) %>
         <a href="/admin/" class="btn btn-outline-secondary m-3">Panel admin</a>
         <% end %>
@@ -26,7 +26,7 @@
       <% else %>
         <%= button_to "Se connecter", new_user_session_path, class:"btn btn-outline-success me-2" %> 
       <% end %>
-    
+    </div>
   </div>
 </nav>
   <div class="container">
