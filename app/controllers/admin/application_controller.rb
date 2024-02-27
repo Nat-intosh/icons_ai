@@ -7,10 +7,10 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
       before_action :authenticate_user!
-      before_action :authenticate_admin
+      # before_action :authenticate_admin
 
     def authenticate_admin
-      redirect_to '/', alert: 'Not authorized.' unless current_user && access_whitelist
+      # redirect_to '/', alert: 'Not authorized.' unless current_user && access_whitelist
       # TODO Add authentication logic here.
     end
     private
