@@ -11,7 +11,11 @@
       <strong>Tags:</strong>
       <%= icon.tags %>
     </p>
-    <a href="<%= icon.image%>" download="test">Télécharger cette icone</a>
+
+    <a href="<%= icon.image%>" download="test"> 
+      <%=image_tag("download.svg", alt: "Télécharger cette image")%>
+    </a>
+
     <%= link_to like_icon_path(icon.id) do %>
       <% if icon.liked_by?(current_user) %>
          <%=image_tag("fav_plein.svg", alt: "J'aime déjà")%>
