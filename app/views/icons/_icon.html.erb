@@ -14,9 +14,9 @@
     <a href="<%= icon.image%>" download="test">Télécharger cette icone</a>
     <%= link_to like_icon_path(icon.id) do %>
       <% if icon.liked_by?(current_user) %>
-        J'aime déjà 
+         <%=image_tag("fav_plein.svg", alt: "J'aime déjà")%>
       <% else %>
-        Je n'aime plus
+        <%=image_tag("fav_vide.svg", alt: "Je n'aime pas") %>
       <% end %>
       <%= icon.users.count %> 
     <% end %>
