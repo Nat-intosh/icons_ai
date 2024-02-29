@@ -1,25 +1,25 @@
-<div class="col-md-3 ">
-  <div id="<%= dom_id(icon) %>" class="card" style="width: 18rem;">
-    <%= image_tag(icon.image, alt: "Icône", class: "card-img-top") %> 
-    <div class="card-body">
-      <h5 class="card-title"><%= icon.title %></h5>
-      <p class="card-text">
-        <strong>Type:</strong>
-        <%= icon.kind %>
-      </p>
-      <a href="<%= icon.image %>" download="test" class="btn btn-link">
+<div id="<%= dom_id(icon) %>" class="card col-3">
+  <img class="card-img-top" src="<%= icon.image %>">
+  <div class="card-body">
+    <h3 class="card-title"><%= icon.title %></h3>
+    <p>
+      <strong>Type:</strong>
+      <%= icon.kind %>
+    </p>
+    <p>
+      <strong>Tags:</strong>
+      <%= icon.tags %>
+    </p>
+    <a href="<%= icon.image %>" download="test" class="btn btn-link">
       <%= image_tag("download.svg", alt: "Télécharger cette image") %>
-      </a>
-      <%= link_to like_icon_path(icon.id), class: "text-dark text-decoration-none" do %>
-        <% if icon.liked_by?(current_user) %>
-          <%= image_tag("fav_plein.svg", alt: "J'aime déjà") %>
-        <% else %>
-          <%= image_tag("fav_vide.svg", alt: "Je n'aime pas") %>
-        <% end %>
-          <%= icon.users.count %>
+    </a>
+    <%= link_to like_icon_path(icon.id), class: "text-dark text-decoration-none" do %>
+      <% if icon.liked_by?(current_user) %>
+        <%= image_tag("fav_plein.svg", alt: "J'aime déjà") %>
+      <% else %>
+        <%= image_tag("fav_vide.svg", alt: "Je n'aime pas") %>
       <% end %>
-    </div>
+      <%= icon.users.count %>
+    <% end %>
   </div>
 </div>
-
-
