@@ -22,9 +22,9 @@
         <% if current_user.try(:admin?) %>
         <a href="/admin/" class="btn btn-outline-secondary nav-item me-2 my-2 my-lg-0 end">Panel admin</a>
         <% end %>
-        <%= link_to "Mes likes", user_path, class:"btn btn-outline-secondary nav-item" %>
+        <%= link_to "Mes likes", user_path, class:"btn btn-outline-danger nav-item me-2 my-2 my-lg-0 end" %>
       <% else %>
-        <%= button_to "Se connecter", new_user_session_path, class:"btn btn-outline-success nav-item" %> 
+        <%= button_to "Se connecter", new_user_session_path, class:"btn btn-outline-success nav-item me-2 my-2 my-lg-0 end" %> 
       <% end %>
     </div>
   </div>
